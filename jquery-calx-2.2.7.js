@@ -8919,8 +8919,10 @@ cell.fx.renderComputedValue = function(){
                 this.el.prop('checked', (originalVal == this.el.val()));
             }else if(tagName == 'select'){
                 this.el.val(originalVal);
+                this.el.triggerHandler('input');
             }else if(tagName == 'input' || tagName == 'textarea'){
                 this.el.val(formattedVal);
+                this.el.triggerHandler('input');
             }
         }else{
             this.el.html(formattedVal);
